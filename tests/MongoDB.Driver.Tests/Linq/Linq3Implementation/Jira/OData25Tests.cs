@@ -29,7 +29,7 @@ public class OData25Tests : Linq3IntegrationTest
 
         // conversion fails
         var queryable = collection.AsQueryable()
-            .Select(c => (int?)((long)c.x * 100));
+            .Select(c => (int?)((long)c.x.Value * 100));
 
         var result = queryable.ToList();
         result[0].Should().Be(100);
@@ -42,7 +42,7 @@ public class OData25Tests : Linq3IntegrationTest
         var collection = GetCollection();
 
         var queryable = collection.AsQueryable()
-            .Select(c => (int?)((int)c.x * 100));
+            .Select(c => (int?)(c.x.Value * 100));
 
         var result = queryable.ToList();
         result[0].Should().Be(100);
@@ -55,7 +55,7 @@ public class OData25Tests : Linq3IntegrationTest
         var collection = GetCollection();
 
         var queryable = collection.AsQueryable()
-            .Select(c => (long?)((int)c.x * 100));
+            .Select(c => (long?)(c.x.Value * 100));
 
         var result = queryable.ToList();
         result[0].Should().Be(100);
