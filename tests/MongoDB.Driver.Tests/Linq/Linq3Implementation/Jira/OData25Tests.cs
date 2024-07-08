@@ -23,7 +23,7 @@ namespace MongoDB.Driver.Tests.Linq.Linq3Implementation.Jira;
 public class OData25Tests : Linq3IntegrationTest
 {
     [Fact]
-    public void Select_nullable_int_double_should_work()
+    public void Select_nullable_int_long_should_work()
     {
         var collection = GetCollection();
 
@@ -50,7 +50,7 @@ public class OData25Tests : Linq3IntegrationTest
     }
 
     [Fact]
-    public void Select_nullable_double_int_should_work()
+    public void Select_nullable_long_int_should_work()
     {
         var collection = GetCollection();
 
